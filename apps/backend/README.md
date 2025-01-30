@@ -8,14 +8,12 @@ pnpm --filter backend test
  or 
  pnpm test
 
+
+single test file 
 pnpm test -- graphql
 pnpm test -- movies
 
 
-
-
-
-run a single test file - 
 
 
 

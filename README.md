@@ -1,9 +1,9 @@
-# Movie Recommendation App
+# 🎮 Movie Recommendation App
 
-## Description
-A full-stack movie recommendation application built using a **monorepo** structure with **Turborepo**. The app allows users to browse, search, and manage movie recommendations. It includes an **admin-protected route** for managing movies, a **browse page**, and individual **movie detail pages**.
+## 📚 Description
+A full-stack **movie recommendation application** built using a **monorepo** structure with **Turborepo**. The app allows users to **browse, search, and manage movie recommendations** with an **admin-protected route** for managing movies.
 
-## Features
+## ✨ Features
 - **Frontend:** Next.js (TypeScript, Tailwind CSS, Daisy UI, Fluid Tailwind)
 - **Backend:** Express.js with GraphQL API
 - **Storage:** AWS S3 for media assets, DynamoDB for movie data
@@ -14,12 +14,12 @@ A full-stack movie recommendation application built using a **monorepo** structu
 - **Advanced Search & Filtering:** GraphQL-powered search functionality with filters and pagination
 - **CI/CD Integration:** AWS-based automated deployment pipeline (planned)
 
-## Tech Stack
+## 💡 Tech Stack
 ### Frontend
 - Next.js (React framework)
 - TypeScript
 - Tailwind CSS (Daisy UI, Fluid Tailwind for styling)
-- @emotion/react & @emotion/styled (Optional) CSS-in-JS styling if needed
+- @emotion/react & @emotion/styled (Optional CSS-in-JS styling)
 - @headlessui/react (Accessible UI components: dropdowns, modals, etc.)
 
 ### Backend
@@ -33,7 +33,7 @@ A full-stack movie recommendation application built using a **monorepo** structu
 - AWS Amplify (for frontend hosting, or alternative AWS service)
 - CI/CD pipeline setup (GitHub Actions + AWS integration in progress)
 
-## Folder Structure
+## 📚 Folder Structure
 ```
 /movie-recommendation-app/
 ├── apps/
@@ -50,7 +50,7 @@ A full-stack movie recommendation application built using a **monorepo** structu
 ├── README.md (This file)
 ```
 
-## Installation & Development
+## 🔧 Installation & Development
 ### Prerequisites
 - **Node.js** (Latest LTS recommended)
 - **pnpm** (Monorepo package manager)
@@ -97,7 +97,7 @@ A full-stack movie recommendation application built using a **monorepo** structu
   pnpm list --filter=backend
   ```
 
-## Build & Testing
+## 📈 Build & Testing
 ### Development Running Commands
 - Start the development environment:
   ```sh
@@ -107,74 +107,66 @@ A full-stack movie recommendation application built using a **monorepo** structu
 ### Build Commands
 - Build the frontend:
   ```sh
-  cd apps/frontend
-  pnpm build
+  pnpm --filter frontend build
   ```
 - Build the backend:
   ```sh
-  cd apps/backend
-  pnpm build
+  pnpm --filter backend build
   ```
 - Build everything:
   ```sh
   pnpm build
   ```
 
-### Test & Validate Build
-- Run tests for frontend:
+### Running Tests
+#### Backend Tests
+- Run all backend tests:
   ```sh
-  cd apps/frontend
-  pnpm test
+  pnpm --filter backend test
   ```
-- Run tests for backend:
+- Run a single backend test file:
   ```sh
-  cd apps/backend
-  pnpm test
+  pnpm test -- tests/graphql.test.ts
   ```
-- Run tests for all workspaces:
   ```sh
-  pnpm test
+  pnpm test -- tests/movies.test.ts
   ```
 
+#### Frontend Tests
+- Run all frontend tests:
+  ```sh
+  pnpm --filter frontend test
+  ```
+- Run a single frontend test file:
+  ```sh
+  pnpm test src/__tests__/Sample.test.tsx
+  ```
 
+## ⚡ Major Libraries Used
+### UI & Styling
+- **@emotion/react & @emotion/styled** → (Optional) CSS-in-JS styling if needed
+- **daisyui** → UI components for Tailwind
+- **@headlessui/react** → Accessible UI components (dropdowns, modals, etc.)
 
+### Testing
+- **Jest** → Unit & integration testing
+- **React Testing Library** → Component testing
+- **Supertest** → API testing for GraphQL & Express
 
+## 📂 Notes
+This movie recommendation app is a **full-stack application** focused primarily on **DevOps and deployment to AWS**. The project also includes **comprehensive frontend and backend testing setups using Jest**.
 
-------------
+## 🏢 Running the Application
+- **Frontend:** `./apps/frontend` → `pnpm dev`
+- **Backend:** `./apps/backend` → `pnpm dev`
+- **Run everything from the root:** `pnpm dev`
 
-# Notes
-A movie reccomendation application. This is a full stack application mainly focused on dev Ops and deplopyment to AWS
+## 📂 Managing Dependencies
+- **See all dependencies:** `pnpm list`
+- **See frontend dependencies:** `pnpm list --filter=frontend`
+- **See backend dependencies:** `pnpm list --filter=backend`
 
-is a mono repo using turbo repo 
-
-
-nextjs
-express and grpah QL 
-dynamoDB 
-
-Some libraires I have installed
-@emotion/react & @emotion/styled → (Optional) CSS-in-JS styling if needed
-daisyui → UI components for Tailwind
-@headlessui/react → Accessible UI components (dropdowns, modals, etc.)
-
-
-
-running the frontend  ./apps/frontend - > pnpm dev
-running the backend ./apps/backend -> pnpm dev
-or run everything in root - > pnpm dev
-
-
-
-pnpm list -> see all dependancie s
- pnpm list --filter=frontend   -> see frontend dependances only
- pnpm list --filter=backend   -> see backend dependances only
-
-
-
-running builds 
-pnpm --filter frontend start
-pnpm --filter backend start
-
-<!-- could add command to start both builds at once but i don't currentl;y have that  -->
-
-
+## ⚙️ Running Builds
+- **Start the frontend build:** `pnpm --filter frontend start`
+- **Start the backend build:** `pnpm --filter backend start`
+<!-- Could add a command to start both builds at once but currently not implemented -->
