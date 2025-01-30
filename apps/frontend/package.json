@@ -14,6 +14,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "@headlessui/react": "^2.2.0",
+    "@movie-recommendation/ui": "workspace:^",
     "@movie-recommendation/utils": "workspace:^",
     "daisyui": "^4.12.23",
     "next": "15.1.6",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { greet } from "@movie-recommendation/utils";
+import { HelloWorld } from "@movie-recommendation/ui";
 
 export default function Home() {
 
@@ -8,7 +9,12 @@ export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-      <div className="text-white bg-black border-2 border-white p-4 rounded-xl">{greet("Frontend-Utils!!!")}</div>
+
+        <div className="text-white bg-black border-2 border-white p-4 rounded-xl">{greet("Frontend-Utils!!!")}</div>
+        <HelloWorld />
+
+
+
         <Image
           className="dark:invert"
           src="/next.svg"
