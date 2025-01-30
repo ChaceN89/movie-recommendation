@@ -13,5 +13,12 @@
     "build": "tsc",
     "dev": "tsx src/index.ts",
     "test": "jest"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "tsx": "^4.19.2"
   }
 }

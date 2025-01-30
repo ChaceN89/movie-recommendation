@@ -177,3 +177,13 @@ adding new packages
 add a tsconfig.json and a package.json 
 
 run in the root -> pnpm run build --filter @movie-recommendation/utils
+
+
+installing libraries into the packages 
+
+ex
+pnpm add dotenv --filter @movie-recommendation/utils
+pnpm add @types/node -D --filter @movie-recommendation/utils
+
+
+See the packages fodler for external packages

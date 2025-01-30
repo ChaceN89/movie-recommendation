@@ -10,9 +10,8 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
+      "@/*": ["./src/*"],
+      "@movie-recommendation/utils": ["../../packages/utils/src"] 
     },
     "allowJs": true,
     "noEmit": true

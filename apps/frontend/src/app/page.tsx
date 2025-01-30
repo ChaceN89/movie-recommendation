@@ -1,13 +1,14 @@
 import Image from "next/image";
-// import { greet } from "@movie-recommendation/utils";
+import { greet } from "@movie-recommendation/utils";
 
 export default function Home() {
 
-  // console.log(greet("Backend"));
+  console.log(greet("Frontend-Utils!!!"));
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+      <div className="text-white bg-black border-2 border-white p-4 rounded-xl">{greet("Frontend-Utils!!!")}</div>
         <Image
           className="dark:invert"
           src="/next.svg"

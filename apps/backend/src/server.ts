@@ -5,7 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import { greet } from "@movie-recommendation/utils";
-console.log(greet("Backend"));
+console.log(greet("Backend-Utils!!!"));
 
 dotenv.config();
 
