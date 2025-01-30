@@ -4,6 +4,9 @@ import { buildSchema } from "graphql";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import { greet } from "@movie-recommendation/utils";
+console.log(greet("Backend"));
+
 dotenv.config();
 
 const app = express();

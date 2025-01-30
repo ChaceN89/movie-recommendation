@@ -170,3 +170,10 @@ This movie recommendation app is a **full-stack application** focused primarily 
 - **Start the frontend build:** `pnpm --filter frontend start`
 - **Start the backend build:** `pnpm --filter backend start`
 <!-- Could add a command to start both builds at once but currently not implemented -->
+
+
+
+adding new packages 
+add a tsconfig.json and a package.json 
+
+run in the root -> pnpm run build --filter @movie-recommendation/utils

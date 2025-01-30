@@ -1,0 +1,17 @@
+{
+  "name": "@movie-recommendation/utils",
+  "version": "1.0.0",
+  "description": "Utility functions for both frontend and backend",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "test": "jest"
+  }
+}
