@@ -5,9 +5,9 @@
     "apps": ["apps/*"]
   },
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "start": "turbo run start",
+    "dev": "NODE_ENV=development turbo run dev",
+    "build": "NODE_ENV=production turbo run build",
+    "start": "NODE_ENV=production turbo run start",
     "lint": "turbo run lint",
     "test": "turbo run test"
   },

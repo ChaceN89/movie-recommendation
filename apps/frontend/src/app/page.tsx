@@ -1,21 +1,31 @@
 import Image from "next/image";
 import { greet } from "@movie-recommendation/utils";
+import { getEnvVar, inProd, inDev } from "@movie-recommendation/utils";
 import { HelloWorld, GreetComponent } from "@movie-recommendation/ui";
 
 export default function Home() {
+  // ✅ Load environment variables (Only NEXT_PUBLIC_* ones should be used in frontend)
+  const apiUrl = getEnvVar("NEXT_PUBLIC_API_URL", "http://localhost:4000/graphql");
+  const frontendEnv = inProd ? "Production" : "Development";
 
   console.log(greet("Frontend-Utils!!!"));
+  console.log(`✅ API URL: ${apiUrl}`);
+  console.log(`✅ Running in ${frontendEnv} mode`);
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 
-        <div className="text-white bg-black border-2 border-white p-4 rounded-xl">{greet("Frontend-Utils!!!")}</div>
+        {/* ✅ Debug Info - REMOVE BEFORE COMMIT */}
+        <div className="text-white bg-black border-2 border-white p-4 rounded-xl">
+          <p>{greet("Frontend-Utils!!!")}</p>
+          <p>API URL: {apiUrl}</p>
+          <p>Environment: {frontendEnv}</p>
+        </div>
+
+        {/* ✅ Components from UI Package */}
         <HelloWorld />
         <GreetComponent name="Frontend User" />
-
-
-
 
         <Image
           className="dark:invert"
@@ -25,6 +35,7 @@ export default function Home() {
           height={38}
           priority
         />
+
         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2">
             Get started by editing{" "}
@@ -81,8 +92,8 @@ export default function Home() {
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+            target="_blank"
+            rel="noopener noreferrer"
         >
           <Image
             aria-hidden

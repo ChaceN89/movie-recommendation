@@ -188,3 +188,23 @@ pnpm add @movie-recommendation/ui --workspace --filter frontend
 
 See the `packages/` folder for package-specific details and available functions.
 
+
+
+lines about when i need to build the packages? - or if the build all commands builds the packages as well????
+
+when changing a package i need to rebuild tha package
+make sure the new functions are added to index.ts or you have changed the import statement 
+
+
+infomaiton about the env file
+referecne to the .env.example filee with dummy data but the correct names
+
+
+NODE_ENV is set by the enviroment i a running it in
+pnpm dev- development 
+build commands its production by default - so deployment on the server 
+i can use this to determine which env file the apps use (using the utils/env package)
+
+
+
+actually i don't even have to rebuild the packagee in development 

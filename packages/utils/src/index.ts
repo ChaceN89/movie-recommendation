@@ -1,8 +1,12 @@
-import { getEnvVar } from "./env";
+import { getEnvVar, inProd, inDev } from "./env";
 import { logDebug, greet } from "./debug";
 import { capitalize } from "./format";
 
-export { getEnvVar, logDebug, greet, capitalize };
+export { 
+  getEnvVar, inProd, inDev,
+  logDebug, greet, 
+  capitalize 
+};
 
 
 // I could export everyhitn gfrom this file and then i can have this 
