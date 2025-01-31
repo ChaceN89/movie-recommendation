@@ -8,7 +8,7 @@ dotenv.config();
  * A simple "Hello World" component with Tailwind styles.
  */
 export const HelloWorld: React.FC = () => {
-  const appName = process.env.APP_ENV || "Unknown App"; // local env usage - but i have a package for this utils/env
+  const appName = process.env.NEXT_PUBLIC_APP_NAME || "Unknown App"; // local env usage - but i have a package for this utils/env
 
   return (
     <div className="p-4 text-lg font-bold text-white bg-blue-500 rounded-lg">
