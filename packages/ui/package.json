@@ -10,17 +10,21 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "type": "module",
   "dependencies": {
+    "@movie-recommendation/utils": "workspace:^",
+    "dotenv": "^16.4.7",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "dotenv": "^16.4.7"
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5"
   },
   "scripts": {
     "build": "tsc",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { greet } from "@movie-recommendation/utils";
-import { HelloWorld } from "@movie-recommendation/ui";
+import { HelloWorld, GreetComponent } from "@movie-recommendation/ui";
 
 export default function Home() {
 
@@ -12,6 +12,8 @@ export default function Home() {
 
         <div className="text-white bg-black border-2 border-white p-4 rounded-xl">{greet("Frontend-Utils!!!")}</div>
         <HelloWorld />
+        <GreetComponent name="Frontend User" />
+
 
 
 

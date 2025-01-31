@@ -172,6 +172,9 @@ importers:
 
   packages/ui:
     dependencies:
+      '@movie-recommendation/utils':
+        specifier: workspace:^
+        version: link:../utils
       dotenv:
         specifier: ^16.4.7
         version: 16.4.7
@@ -185,6 +188,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.1
         version: 3.4.17(ts-node@10.9.2(@types/node@20.17.16)(typescript@5.7.3))
+      tsx:
+        specifier: ^4.19.2
+        version: 4.19.2
       typescript:
         specifier: ^5
         version: 5.7.3
