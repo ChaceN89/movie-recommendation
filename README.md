@@ -153,37 +153,38 @@ A full-stack **movie recommendation application** built using a **monorepo** str
 - **React Testing Library** → Component testing
 - **Supertest** → API testing for GraphQL & Express
 
-## 📂 Notes
-This movie recommendation app is a **full-stack application** focused primarily on **DevOps and deployment to AWS**. The project also includes **comprehensive frontend and backend testing setups using Jest**.
+## 🐂 Package Management
+### Adding a New Package
+1. Create a **`package.json`** and **`tsconfig.json`** inside the new package.
+2. Add the package to `packages/` and ensure it's included in `pnpm-workspace.yaml`.
+3. Build the package:
+   ```sh
+   pnpm run build --filter @movie-recommendation/utils
+   ```
 
-## 🏢 Running the Application
-- **Frontend:** `./apps/frontend` → `pnpm dev`
-- **Backend:** `./apps/backend` → `pnpm dev`
-- **Run everything from the root:** `pnpm dev`
-
-## 📂 Managing Dependencies
-- **See all dependencies:** `pnpm list`
-- **See frontend dependencies:** `pnpm list --filter=frontend`
-- **See backend dependencies:** `pnpm list --filter=backend`
-
-## ⚙️ Running Builds
-- **Start the frontend build:** `pnpm --filter frontend start`
-- **Start the backend build:** `pnpm --filter backend start`
-<!-- Could add a command to start both builds at once but currently not implemented -->
-
-
-
-adding new packages 
-add a tsconfig.json and a package.json 
-
-run in the root -> pnpm run build --filter @movie-recommendation/utils
-
-
-installing libraries into the packages 
-
-ex
+### Installing Libraries into a Package
+Example:
+```sh
 pnpm add dotenv --filter @movie-recommendation/utils
 pnpm add @types/node -D --filter @movie-recommendation/utils
+```
 
+### Adding Another Package as a Dependency
+Example:
+```sh
+pnpm add @movie-recommendation/utils --workspace --filter @movie-recommendation/ui
+```
 
-See the packages fodler for external packages
+### Building a Package
+```sh
+pnpm build --filter @movie-recommendation/ui
+```
+
+### Adding a Package to an App
+After building the package, install it in an app (frontend or backend):
+```sh
+pnpm add @movie-recommendation/ui --workspace --filter frontend
+```
+
+See the `packages/` folder for package-specific details and available functions.
+
