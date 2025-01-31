@@ -7,24 +7,30 @@
   "exports": {
     ".": {
       "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
-    }
+    },
+    "./*": "./dist/*"
   },
   "files": [
     "dist"
   ],
   "sideEffects": false,
   "type": "module",
-  "dependencies": {
-    "@movie-recommendation/utils": "workspace:^",
-    "dotenv": "^16.4.7",
+  "peerDependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@movie-recommendation/utils": "workspace:^",
+    "dotenv": "^16.4.7"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",
     "tsx": "^4.19.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0"
   },
   "scripts": {
     "build": "tsc",

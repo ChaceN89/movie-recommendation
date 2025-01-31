@@ -1,9 +1,7 @@
-import { getEnvVar, inProd, inDev } from "./env";
 import { logDebug, greet } from "./debug";
 import { capitalize } from "./format";
 
 export { 
-  getEnvVar, inProd, inDev,
   logDebug, greet, 
   capitalize 
 };

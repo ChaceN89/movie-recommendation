@@ -4,25 +4,14 @@ import { buildSchema } from "graphql";
 import cors from "cors";
 
 // ✅ Import from utils package
-import { getEnvVar, inProd, inDev } from "@movie-recommendation/utils";
 import { greet } from "@movie-recommendation/utils"; // Package test
 
 const app = express();
 app.use(cors());
 
-// ✅ Load environment variables
-const databaseUrl = getEnvVar("DATABASE_URL");
-const jwtSecret = getEnvVar("JWT_SECRET");
-const port = getEnvVar("PORT", "4000");
+const port = 4000;
 
-// ✅ Print environment info for debugging (REMOVE BEFORE COMMITTING)
-console.log(`✅ Loaded environment variables:`);
-console.log(`- DATABASE_URL: ${databaseUrl}`);
-console.log(`- JWT_SECRET: (hidden)`);
-console.log(`- PORT: ${port}`);
-console.log(`- Running in ${inProd ? "PRODUCTION" : "DEVELOPMENT"} mode`);
-console.log(greet("Backend-Utils!!!"));
-
+console.log(greet("Backend-Utils ✅ "));
 
 
 // GraphQL Schema
