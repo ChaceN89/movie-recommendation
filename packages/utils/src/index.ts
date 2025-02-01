@@ -1,7 +1,9 @@
 import { logDebug, greet } from "./debug";
 import { capitalize } from "./format";
+import { getEnv } from "./env";
 
 export { 
+  getEnv,
   logDebug, greet, 
   capitalize 
 };

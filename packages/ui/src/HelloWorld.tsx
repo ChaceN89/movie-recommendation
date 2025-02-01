@@ -2,13 +2,13 @@ import React from "react";
 import dotenv from "dotenv";
 
 // Load environment variables
-dotenv.config();
+import { getEnv, greet, capitalize } from "@movie-recommendation/utils";
 
 /**
  * A simple "Hello World" component with Tailwind styles.
  */
 export const HelloWorld: React.FC = () => {
-  const appName = process.env.NEXT_PUBLIC_APP_NAME || "Unknown App"; // local env usage - but i have a package for this utils/env
+  const appName= getEnv("NEXT_PUBLIC_APP_NAME", "Unknown App Name");
 
   return (
     <div className="p-4 text-lg font-bold text-white bg-blue-500 rounded-lg">

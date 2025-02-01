@@ -15,7 +15,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "dotenv": "^16.4.7"
+    "dotenv": "^16.4.7",
+    "find-up": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
