@@ -1,3 +1,18 @@
+/**
+ * @file TailwindBreakpoints.tsx
+ * @author Chace Nielson
+ * @created Jan 14, 2025
+ * @updated Feb 2, 2025
+ * @description Displays the current active Tailwind CSS breakpoint for development debugging.
+ * 
+ * @example
+ * import TailwindBreakpoints from "@movie-recommendation/ui/devTools/TailwindBreakpoints";
+ * 
+ * function App() {
+ *   return <TailwindBreakpoints />;
+ * }
+ */
+
 import React from "react";
 
 const TailwindBreakpoints: React.FC = () => {

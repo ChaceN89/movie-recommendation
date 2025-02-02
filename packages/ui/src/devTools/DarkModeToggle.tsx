@@ -1,3 +1,20 @@
+/**
+ * @file DarkModeToggle.tsx
+ * @author Chace Nielson
+ * @created Jan 14, 2025
+ * @updated Feb 2, 2025
+ * @description A simple toggle for enabling and disabling dark mode by adding/removing the `dark` class on the `<html>` element.
+ * 
+ * @note Ensure `darkMode: "class"` is set in `tailwind.config.js` for dark mode styles to work.
+ * 
+ * @example
+ * import DarkModeToggle from "@movie-recommendation/ui/devTools/DarkModeToggle";
+ * 
+ * function App() {
+ *   return <DarkModeToggle />;
+ * }
+ */
+
 "use client";
 
 import React, { useState, useEffect } from "react";
