@@ -3,37 +3,46 @@
 ## 📚 Description
 A full-stack **movie recommendation application** built using a **monorepo** structure with **Turborepo**. The app allows users to **browse, search, and manage movie recommendations** with an **admin-protected route** for managing movies.
 
-## ✨ Features
-- **Frontend:** Next.js (TypeScript, Tailwind CSS, Daisy UI, Fluid Tailwind)
-- **Backend:** Express.js with GraphQL API
-- **Storage:** AWS S3 for media assets, DynamoDB for movie data
-- **Deployment:** Fully hosted on AWS
-- **Monorepo Management:** Turborepo for workspace handling
-- **Lightweight Local Dev Database:** NoSQL file-based database for initial development
-- **Authentication:** Admin-protected routes for movie management
-- **Advanced Search & Filtering:** GraphQL-powered search functionality with filters and pagination
-- **CI/CD Integration:** AWS-based automated deployment pipeline (planned)
+---
 
-## 💡 Tech Stack
-### Frontend
-- Next.js (React framework)
-- TypeScript
-- Tailwind CSS (Daisy UI, Fluid Tailwind for styling)
-- @emotion/react & @emotion/styled (Optional CSS-in-JS styling)
-- @headlessui/react (Accessible UI components: dropdowns, modals, etc.)
+## 📖 Table of Contents
+- [Project Overview](#🚀-project-overview)
+  - [Features & Tech Stack](#features--tech-stack)
+  - [Folder Structure](#📁-folder-structure)
+- [Installation & Development](#🔧-installation--development)
+  - [Prerequisites](#prerequisites)
+  - [Setup Instructions](#setup-instructions)
+  - [Running the Project in Development Mode](#running-the-project-in-development-mode)
+- [Testing](#🧪-testing)
+- [Building & Starting the Application](#📦-building--starting-the-application)
+- [Helpful Commands](#🔧-helpful-commands)
+- [Packages](#📦-packages)
+- [References](#📚-references)
 
-### Backend
-- Express.js (REST + GraphQL API)
-- GraphQL (Apollo Server)
-- AWS S3 (Storage for images/posters)
-- AWS DynamoDB (NoSQL database, initially using a local NoSQL store)
+---
 
-### DevOps & Deployment
-- AWS EC2 or AWS Lambda (for backend hosting)
-- AWS Amplify (for frontend hosting, or alternative AWS service)
-- CI/CD pipeline setup (GitHub Actions + AWS integration in progress)
+## 🚀 Project Overview
 
-## 📚 Folder Structure
+### Features & Tech Stack
+#### Frontend
+- **Next.js** (React framework)
+- **TypeScript**
+- **Tailwind CSS** (Daisy UI, Fluid Tailwind for styling)
+- **@emotion/react & @emotion/styled** (Optional CSS-in-JS styling)
+- **@headlessui/react** (Accessible UI components: dropdowns, modals, etc.)
+
+#### Backend
+- **Express.js** (REST + GraphQL API)
+- **GraphQL** (Apollo Server)
+- **AWS S3** (Storage for images/posters)
+- **AWS DynamoDB** (NoSQL database, initially using a local NoSQL store)
+
+#### DevOps & Deployment
+- **AWS EC2 or AWS Lambda** (for backend hosting)
+- **AWS Amplify** (for frontend hosting, or alternative AWS service)
+- **CI/CD pipeline setup** (GitHub Actions + AWS integration in progress)
+
+### 📁 Folder Structure
 ```
 /movie-recommendation-app/
 ├── apps/
@@ -49,6 +58,8 @@ A full-stack **movie recommendation application** built using a **monorepo** str
 ├── turbo.json (Turborepo tasks configuration)
 ├── README.md (This file)
 ```
+
+---
 
 ## 🔧 Installation & Development
 ### Prerequisites
@@ -67,144 +78,130 @@ A full-stack **movie recommendation application** built using a **monorepo** str
    pnpm install
    ```
 
-### Running the Project
+### Running the Project in Development Mode
 - **Frontend:**
   ```sh
-  cd apps/frontend
-  pnpm dev
+  pnpm --filter frontend dev
   ```
 - **Backend:**
   ```sh
-  cd apps/backend
-  pnpm dev
+  pnpm --filter backend dev
   ```
 - **Run Everything from Root:**
   ```sh
   pnpm dev
   ```
 
-### Listing Dependencies
-- View all dependencies:
-  ```sh
-  pnpm list
-  ```
-- View frontend dependencies only:
-  ```sh
-  pnpm list --filter=frontend
-  ```
-- View backend dependencies only:
-  ```sh
-  pnpm list --filter=backend
-  ```
+### Environment Variables
+- The `.env.example` file contains required environment variable names with dummy data.
+- `NODE_ENV` is determined by the running command:
+  - `pnpm dev` → `NODE_ENV=development`
+  - `pnpm build` and `pnpm start` → `NODE_ENV=production`
+- The `utils/env` package handles loading the correct `.env` file based on `NODE_ENV`.
 
-## 📈 Build & Testing
-### Development Running Commands
-- Start the development environment:
-  ```sh
-  pnpm dev
-  ```
+---
 
-### Build Commands
-- Build the frontend:
-  ```sh
-  pnpm --filter frontend build
-  ```
-- Build the backend:
-  ```sh
-  pnpm --filter backend build
-  ```
-- Build everything:
-  ```sh
-  pnpm build
-  ```
-
+## 🧪 Testing
 ### Running Tests
 #### Backend Tests
-- Run all backend tests:
-  ```sh
-  pnpm --filter backend test
-  ```
-- Run a single backend test file:
+```sh
+pnpm --filter backend test
+```
+- Run a single test file:
   ```sh
   pnpm test -- tests/graphql.test.ts
   ```
-  ```sh
-  pnpm test -- tests/movies.test.ts
-  ```
 
 #### Frontend Tests
-- Run all frontend tests:
-  ```sh
-  pnpm --filter frontend test
-  ```
-- Run a single frontend test file:
+```sh
+pnpm --filter frontend test
+```
+- Run a single test file:
   ```sh
   pnpm test src/__tests__/Sample.test.tsx
   ```
 
-## ⚡ Major Libraries Used
-### UI & Styling
-- **@emotion/react & @emotion/styled** → (Optional) CSS-in-JS styling if needed
-- **daisyui** → UI components for Tailwind
-- **@headlessui/react** → Accessible UI components (dropdowns, modals, etc.)
+---
 
-### Testing
-- **Jest** → Unit & integration testing
-- **React Testing Library** → Component testing
-- **Supertest** → API testing for GraphQL & Express
+## 📦 Building & Starting the Application
+### Building
+- **Build everything:**
+  ```sh
+  pnpm build
+  ```
+- **Build frontend:**
+  ```sh
+  pnpm --filter frontend build
+  ```
+- **Build backend:**
+  ```sh
+  pnpm --filter backend build
+  ```
 
-## 🐂 Package Management
-### Adding a New Package
-1. Create a **`package.json`** and **`tsconfig.json`** inside the new package.
-2. Add the package to `packages/` and ensure it's included in `pnpm-workspace.yaml`.
-3. Build the package:
-   ```sh
-   pnpm run build --filter @movie-recommendation/utils
-   ```
+### Starting the Application
+- **Start frontend build:**
+  ```sh
+  pnpm --filter frontend start
+  ```
+- **Start backend build:**
+  ```sh
+  pnpm --filter backend start
+  ```
+- **Start everything:**
+  ```sh
+  pnpm start
+  ```
 
-### Installing Libraries into a Package
-Example:
+---
+
+## 🔧 Helpful Commands
+### List Dependencies
+- View all dependencies:
+  ```sh
+  pnpm list
+  ```
+- View frontend dependencies:
+  ```sh
+  pnpm list --filter=frontend
+  ```
+- View backend dependencies:
+  ```sh
+  pnpm list --filter=backend
+  ```
+
+### Clean Build Artifacts
 ```sh
-pnpm add dotenv --filter @movie-recommendation/utils
-pnpm add @types/node -D --filter @movie-recommendation/utils
+rm -rf node_modules .turbo .next dist
+pnpm install
 ```
 
-### Adding Another Package as a Dependency
-Example:
-```sh
-pnpm add @movie-recommendation/utils --workspace --filter @movie-recommendation/ui
+---
+
+## 📦 Packages
+### Managing Packages
+- **Building a Package:**
+  ```sh
+  pnpm build --filter @movie-recommendation/ui
+  ```
+- **Adding a Package to an App:**
+  ```sh
+  pnpm add @movie-recommendation/ui --workspace --filter frontend
+  ```
+
+#### Example of Installed Packages in `frontend/package.json`:
+```json
+"dependencies": {
+  "@movie-recommendation/ui": "workspace:^",
+  "@movie-recommendation/utils": "workspace:^"
+}
 ```
 
-### Building a Package
-```sh
-pnpm build --filter @movie-recommendation/ui
-```
+---
 
-### Adding a Package to an App
-After building the package, install it in an app (frontend or backend):
-```sh
-pnpm add @movie-recommendation/ui --workspace --filter frontend
-```
-
-See the `packages/` folder for package-specific details and available functions.
-
-
-
-lines about when i need to build the packages? - or if the build all commands builds the packages as well????
-
-when changing a package i need to rebuild tha package
-make sure the new functions are added to index.ts or you have changed the import statement 
-
-
-infomaiton about the env file
-referecne to the .env.example filee with dummy data but the correct names
-
-
-NODE_ENV is set by the enviroment i a running it in
-pnpm dev- development 
-build commands its production by default - so deployment on the server 
-i can use this to determine which env file the apps use (using the utils/env package)
-
-
-
-actually i don't even have to rebuild the packagee in development 
+## 📚 References
+- [Turborepo Documentation](https://turbo.build/)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Express.js Documentation](https://expressjs.com/)
+- [GraphQL Documentation](https://graphql.org/)
+- [AWS S3 Documentation](https://docs.aws.amazon.com/s3/)
+- [AWS DynamoDB Documentation](https://docs.aws.amazon.com/dynamodb/)
