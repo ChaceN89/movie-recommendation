@@ -9,20 +9,26 @@
  * import { DevTools } from "@movie-recommendation/ui";
  * 
  * function App() {
- *   return <DevTools noDarkMode={true} />;
+ *   return <DevTools noDarkMode={true} noModifyTitle={true} />;
  * }
  */
 
 import React from "react";
+
+// Dev Testing Tools
 import TailwindBreakpoints from "./TailwindBreakpoints";
 import DarkModeToggle from "./DarkModeToggle";
+import ModifyTitle from "./ModifyTitle";
+
+// Load environment variables utility
 import { getEnv } from "@movie-recommendation/utils";
 
 interface DevToolsProps {
   noDarkMode?: boolean; // Optional prop to disable DarkModeToggle
+  noModifyTitle?: boolean; // Optional prop to disable ModifyTitle
 }
 
-export const DevTools: React.FC<DevToolsProps> = ({ noDarkMode = false }) => {
+export const DevTools: React.FC<DevToolsProps> = ({ noDarkMode = false, noModifyTitle = false }) => {
   const isDevelopment = getEnv("NODE_ENV", "false") === "development";
 
   if (!isDevelopment) return null;
@@ -30,7 +36,8 @@ export const DevTools: React.FC<DevToolsProps> = ({ noDarkMode = false }) => {
   return (
     <>
       <TailwindBreakpoints />
-      {!noDarkMode && <DarkModeToggle />} {/* Render DarkModeToggle only if noDarkMode is false */}
+      {!noDarkMode && <DarkModeToggle />} 
+      {!noModifyTitle && <ModifyTitle />} 
     </>
   );
 };
