@@ -2,7 +2,6 @@ import Image from "next/image";
 import { HelloWorld, GreetComponent } from "@movie-recommendation/ui";
 
 import { getEnv, greet } from "@movie-recommendation/utils";
-// import { getEnv, logDebug, greet, capitalize } from "@movie-recommendation/utils";
 
 
 export default function Home() {
@@ -25,7 +24,7 @@ export default function Home() {
 
 
         {/* ✅ Debug Info - REMOVE BEFORE COMMIT */}
-        <div className="text-white  bg-black dark:bg-slate-700 border-2 border-white dark:border-red-500 p-4 rounded-xl">
+        <div className="text-white p-10  bg-black dark:bg-slate-700 border-2 border-white dark:border-red-500 rounded-xl">
           <p>{greet("Frontend-Utils ✅ ")}</p>
 
         </div>
