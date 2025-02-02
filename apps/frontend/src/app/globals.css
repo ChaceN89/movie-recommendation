@@ -3,6 +3,33 @@
 @tailwind utilities;
 
 
-.app-shell{
-  @apply w-full bg-accent dark:bg-accent-dark py-4 z-50 shadow-lg;
+header, footer {
+  @apply w-full dark:bg-secondary bg-secondary-dark py-4 z-20 shadow-lg;
+}
+/* Global typography styles */
+h1, h2, h3, h4, h5, h6, p {
+  @apply text-[#F5F5F5]; /* Off-white in light mode, slightly darker in dark mode */
+}
+
+/* Additional font styles */
+h1 {
+  @apply text-4xl font-bold font-sans;
+}
+h2 {
+  @apply text-3xl font-semibold font-sans;
+}
+h3 {
+  @apply text-2xl font-medium font-sans;
+}
+h4 {
+  @apply text-xl font-medium font-serif;
+}
+h5 {
+  @apply text-lg font-medium font-serif;
+}
+h6 {
+  @apply text-base font-medium font-serif;
+}
+p {
+  @apply text-base font-sans leading-relaxed;
 }

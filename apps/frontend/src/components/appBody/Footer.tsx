@@ -6,7 +6,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="app-shell">
+    <footer >
       Footer content
     </footer>
   );

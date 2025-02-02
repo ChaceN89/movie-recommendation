@@ -1,3 +1,4 @@
+import { text } from "stream/consumers";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -12,17 +13,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#4A148C",         // Deep, rich purple (base primary)
-        "primary-dark": "#370B72",  // Even darker purple
-        "primary-darker": "#250753", // Deepest shade of purple
+        primary: "#2D086A",
+        "primary-dark": "#1D0446",
+        "primary-darker": "#170436", 
       
-        secondary: "#1E1B29",       // Dark slate with a hint of purple
-        "secondary-dark": "#15121F", // Even darker variant
-        "secondary-darker": "#0E0C17", // Deepest shadow
+        secondary: "#055B85",
+        "secondary-dark": "#022C41",
+        "secondary-darker": "#022232", 
       
-        accent: "#9C27B0",          // Brighter purple accent
-        "accent-dark": "#6A1B9A",   // Darker accent variant
-      },      
+        accent: "#880030",
+        "accent-dark": "#5A0020",
+        "accent-darker": "#450018",
+      },
+
       fontFamily: {
         'open-sans': ['Open Sans', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],
@@ -39,14 +42,57 @@ export default {
         'poppins': ['Poppins', 'sans-serif'], 
         'bebas-neue': ['Bebas Neue', 'sans-serif'], 
       },
-      zIndex: {
-        '5': '5',
-        '15': '15',
-        '25': '25',
-        '35': '35',
-        '45': '45',
+    },
+    typography: {
+      DEFAULT: {
+        css: {
+          h1: {
+            fontSize: "2.5rem", // 40px
+            fontWeight: "700",
+            color: "theme(colors.primary)",
+            fontFamily: "theme(fontFamily.montserrat)",
+          },
+          h2: {
+            fontSize: "2rem", // 32px
+            fontWeight: "600",
+            color: "theme(colors.primary-dark)",
+            fontFamily: "theme(fontFamily.montserrat)",
+          },
+          h3: {
+            fontSize: "1.75rem", // 28px
+            fontWeight: "600",
+            color: "theme(colors.primary-darker)",
+            fontFamily: "theme(fontFamily.nunito)",
+          },
+          h4: {
+            fontSize: "1.5rem", // 24px
+            fontWeight: "500",
+            color: "theme(colors.secondary)",
+            fontFamily: "theme(fontFamily.lato)",
+          },
+          h5: {
+            fontSize: "1.25rem", // 20px
+            fontWeight: "500",
+            color: "theme(colors.secondary-dark)",
+            fontFamily: "theme(fontFamily.poppins)",
+          },
+          h6: {
+            fontSize: "1rem", // 16px
+            fontWeight: "500",
+            color: "theme(colors.secondary-darker)",
+            fontFamily: "theme(fontFamily.poppins)",
+          },
+          p: {
+            fontSize: "1rem", // 16px
+            fontWeight: "400",
+            color: "theme(colors.accent-dark)",
+            fontFamily: "theme(fontFamily.roboto)",
+            lineHeight: "1.75",
+          },
+        },
       },
     },
+
   },
   plugins: [require("daisyui")],
 } satisfies Config;

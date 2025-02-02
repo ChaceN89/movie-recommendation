@@ -10,6 +10,7 @@ import { DevTools } from "@movie-recommendation/ui";
 import Header from "@/components/appBody/Header";
 import Main from "@/components/appBody/Main";
 import Footer from "@/components/appBody/Footer";
+import ModalDisplay from "@/components/appBody/ModalDisplay";
 
 // Styles
 import "./globals.css";
@@ -36,8 +37,12 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
         <meta name="theme-color" content="#4A148C" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-primary dark:bg-primary-darker`}>
-        <DevTools />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen min-w-56`}>
+        <DevTools
+          // showColorBoxes
+          // showHeaders
+        />
+        <ModalDisplay/>
         <Header />
         <Main>{children}</Main>
         <Footer />

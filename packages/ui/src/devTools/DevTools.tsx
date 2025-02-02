@@ -19,16 +19,26 @@ import React from "react";
 import TailwindBreakpoints from "./TailwindBreakpoints";
 import DarkModeToggle from "./DarkModeToggle";
 import ModifyTitle from "./ModifyTitle";
+import HeaderTesting from "./HeaderTesting";
+import ColorBoxes from "./ColorBoxes";
 
 // Load environment variables utility
 import { getEnv } from "@movie-recommendation/utils";
 
 interface DevToolsProps {
-  noDarkMode?: boolean; // Optional prop to disable DarkModeToggle
-  noModifyTitle?: boolean; // Optional prop to disable ModifyTitle
+  noDarkMode?: boolean;
+  noModifyTitle?: boolean;
+  showColorBoxes?: boolean;
+  showHeaders?: boolean;
 }
 
-export const DevTools: React.FC<DevToolsProps> = ({ noDarkMode = false, noModifyTitle = false }) => {
+export const DevTools: React.FC<DevToolsProps> = ({
+  noDarkMode = false,
+  noModifyTitle = false,
+  showColorBoxes = false,
+  showHeaders = false,
+}) => {
+  
   const isDevelopment = getEnv("NODE_ENV", "false") === "development";
 
   if (!isDevelopment) return null;
@@ -38,6 +48,8 @@ export const DevTools: React.FC<DevToolsProps> = ({ noDarkMode = false, noModify
       <TailwindBreakpoints />
       {!noDarkMode && <DarkModeToggle />} 
       {!noModifyTitle && <ModifyTitle />} 
+      {showColorBoxes && <ColorBoxes />} 
+      {showHeaders && <HeaderTesting />} 
     </>
   );
 };
