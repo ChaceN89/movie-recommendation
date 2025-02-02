@@ -12,13 +12,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#ffffff",
-        "primary-dark": "#f0f0f0",
-        secondary: "#171717",
-        "secondary-dark": "#0a0a0a",
-        accent: "#7F1D1D",
-        "accent-dark": "#3b1010",
-      },
+        primary: "#4A148C",         // Deep, rich purple (base primary)
+        "primary-dark": "#370B72",  // Even darker purple
+        "primary-darker": "#250753", // Deepest shade of purple
+      
+        secondary: "#1E1B29",       // Dark slate with a hint of purple
+        "secondary-dark": "#15121F", // Even darker variant
+        "secondary-darker": "#0E0C17", // Deepest shadow
+      
+        accent: "#9C27B0",          // Brighter purple accent
+        "accent-dark": "#6A1B9A",   // Darker accent variant
+      },      
       fontFamily: {
         'open-sans': ['Open Sans', 'sans-serif'],
         'roboto': ['Roboto', 'sans-serif'],
